@@ -23,9 +23,14 @@ public class Calculadora {
         }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         mensajes();
         int respuesta = sc.nextInt();
+        while(respuesta>5 || respuesta<1){
+            limpiar();
+            mensajes();
+            System.out.println("Solo tienes 5 opciones... ");
+            respuesta = sc.nextInt();
+        }
         while (respuesta !=5){
         if(respuesta == 1){ // Aqui es para sumar, ya que la suma se hace un pelin distinta al resto de operaciones :D
             limpiar();

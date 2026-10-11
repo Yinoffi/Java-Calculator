@@ -52,9 +52,9 @@ public class Calculadora {
         else if(respuesta == 2){ // Resta
             limpiar();
             double num1, num2;
-            System.out.println("Num1: ");
+            System.out.println("Introduce un numero: ");
             num1 = sc.nextInt();
-            System.out.println("Num2: ");
+            System.out.println("Introduce un numero: ");
             num2 = sc.nextInt();
             double resultado = restar(num1, num2);
             limpiar();
@@ -66,9 +66,9 @@ public class Calculadora {
         else if(respuesta == 3){ // multiplicar
             limpiar();
             double num1, num2;
-            System.out.println("Num1: ");
+            System.out.println("Introduce un numero: ");
             num1 = sc.nextInt();
-            System.out.println("Num2: ");
+            System.out.println("Introduce un numero: ");
             num2 = sc.nextInt();
             double resultado = multiplicar(num1, num2);
             limpiar();
@@ -80,15 +80,15 @@ public class Calculadora {
         else if(respuesta == 4){ //dividir
             limpiar();
             double num1, num2;
-            System.out.println("Num1: ");
+            System.out.println("Introduce un numero: ");
             num1 = sc.nextInt();
-            System.out.println("Num2: ");
+            System.out.println("Introduce un numero: ");
             num2 = sc.nextInt();
             while (num2==0){
                 System.out.println("NO SE PUEDE DIVIDIR ENTRE 0");
-                System.out.println("Num1: ");
+                System.out.println("Introduce un numero: ");
                 num1 = sc.nextInt();
-                System.out.println("Num2: ");
+                System.out.println("Introduce un numero: ");
                 num2 = sc.nextInt();
             }
             double resultado = dividir(num1, num2);

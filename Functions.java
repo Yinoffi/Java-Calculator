@@ -1,6 +1,6 @@
 public class Functions {
     public static void mensajeD(){
-        System.out.println("¿Que quieres hacerV2?\n1: Sumar\n2: Restar\n3: Multiplicar\n4: Dividir\n5: Salir");
+        System.out.println("¿Que quieres NO hacerV2?\n1: Sumar\n2: Restar\n3: Multiplicar\n4: Dividir\n5: Salir");
         System.out.println("Poner algo que no sean numeros cerrara el programa automaticamente!!!");
     }
     public static void limpiar(){

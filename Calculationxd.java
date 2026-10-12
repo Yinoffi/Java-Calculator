@@ -1,18 +1,5 @@
 import java.util.Scanner;
-
 public class Calculationxd {
-        public static double restar(double a, double b){
-            double resultado = a-b;
-            return resultado;
-        }
-        public static double dividir(double a, double b){
-            double resultado = a/b;
-            return resultado;
-        }
-        public static double multiplicar(double a, double b){
-            double resultado = a*b;
-            return resultado;
-        }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Functions.mensajeD();
@@ -49,7 +36,7 @@ public class Calculationxd {
             num1 = sc.nextInt();
             System.out.println("Introduce un numero: ");
             num2 = sc.nextInt();
-            double resultado = restar(num1, num2);
+            double resultado = Operaciones.restar(num1, num2);
             Functions.limpiar();
             System.out.println("Resultado de tu operacion: "+resultado+"\n");
             Functions.mensajeD();
@@ -63,7 +50,7 @@ public class Calculationxd {
             num1 = sc.nextInt();
             System.out.println("Introduce un numero: ");
             num2 = sc.nextInt();
-            double resultado = multiplicar(num1, num2);
+            double resultado = Operaciones.multiplicar(num1, num2);
             Functions.limpiar();
             System.out.println("Resultado de tu operacion: "+resultado+"\n");
             Functions.mensajeD();
@@ -84,7 +71,7 @@ public class Calculationxd {
                 System.out.println("Introduce un numero: ");
                 num2 = sc.nextInt();
             }
-            double resultado = dividir(num1, num2);
+            double resultado = Operaciones.dividir(num1, num2);
             Functions.limpiar();
             System.out.println("Resultado de tu operacion: "+resultado+"\n");
             Functions.mensajeD();
@@ -92,7 +79,6 @@ public class Calculationxd {
         } 
         else{System.exit(0);} // terminar el programa por si acaso pone algo q no sea un numero
         }
-
         sc.close();
     }
 }

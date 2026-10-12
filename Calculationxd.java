@@ -17,11 +17,11 @@ public class Calculationxd {
         Scanner sc = new Scanner(System.in);
         Functions.mensajeD();
         int respuesta = sc.nextInt();
-        while (respuesta !=5){ // Bucle por si pone 5
+        while (respuesta !=5){ // Bucle hasta que elija la op5 para salir
             while(respuesta>5 || respuesta<1){ // Seguridad por si pone numeros que no sean del 1 al 5
             Functions.limpiar();
             Functions.mensajeD();
-            System.out.println("Solo tienes 5 opciones... ");
+            System.out.println("Elije una de las 5 opciones... ");
             respuesta = sc.nextInt();
         }
 
@@ -30,8 +30,8 @@ public class Calculationxd {
             double resp;
             double sumas = 0;
             System.out.println("Intruduce la cantidad de numeros a sumar: ");
-            double numnumeros = sc.nextInt();
-            for (double i = 0; i<numnumeros; i++){
+            double cantidadNumeros = sc.nextInt();
+            for (double i = 0; i<cantidadNumeros; i++){
                 System.out.println("Intruduce un numero: ");
                 resp = sc.nextInt();
                 sumas+=resp;
@@ -42,7 +42,7 @@ public class Calculationxd {
             respuesta = sc.nextInt();
         }
 
-        else if(respuesta == 2){ // Resta
+        else if(respuesta == 2){ // Restar
             Functions.limpiar();
             double num1, num2;
             System.out.println("Introduce un numero: ");

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Calculationxd {
+public class Calculadora {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Functions.mensajeD();

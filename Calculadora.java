@@ -2,6 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
+        Functions.limpiar();
         boolean valido = false;
         int respuesta = 0;
         Scanner sc = new Scanner(System.in); // Inicio el scanner para devolver respuestas
@@ -13,19 +14,19 @@ public class Calculadora {
         } catch(InputMismatchException e){
             Functions.limpiar();
             sc.next();
-            System.out.println("Tienes que escribir un numero del 1 al 5 nada mas!!!!!");
+            Functions.errorRango();
         }
 }
-        while (respuesta >5 || respuesta < 0){
+        while (respuesta > 5 || respuesta <= 0){
             Functions.limpiar();
             try {
-            System.out.println("Solo un numero del 1 al 5...\n");
+            Functions.errorRango();
             Functions.mensajeD();
             respuesta = sc.nextInt();
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Tienes que escribir un numero del 1 al 5 nada mas!!!!!");
+                Functions.errorTipoRespuesta();
             }
         }
         while (respuesta !=5){ // Bucle hasta que elija la op5 para salir
@@ -44,7 +45,7 @@ public class Calculadora {
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Error, introduce un numero de menos de 11 digitos");
+                Functions.errorTipoRespuesta();
             }}
         // Primer bloque TRY para que no rompa el programa
             
@@ -56,11 +57,12 @@ public class Calculadora {
             resp = sc.nextLong();
             sumas+=resp;
             valido = true;
+            Functions.limpiar();
             System.out.println("Suma total: "+sumas+"\n");
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros de menos de 11 digitos!!");
+                Functions.errorTipoRespuesta();
                 System.out.println("Suma total: "+sumas+"\n");
             }}
                 
@@ -76,7 +78,7 @@ public class Calculadora {
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Tienes que escribir un numero del 1 al 5 nada mas!!!!!");
+                Functions.errorRango();
             }}
         } // CIERRE IF
 // Si elije la 2 para restar
@@ -93,7 +95,7 @@ public class Calculadora {
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
             valido = false;
@@ -105,7 +107,7 @@ public class Calculadora {
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
             resultado = Operaciones.restar(num1, num2);
@@ -120,11 +122,11 @@ public class Calculadora {
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }}
         }
 // Si elije la 3 para multiplicar
-        else if(respuesta == 3){ // Restar
+        else if(respuesta == 3){ // Multiplicar
             Functions.limpiar();
             long num1= 0, num2 = 0, resultado = 0;
             
@@ -137,7 +139,7 @@ public class Calculadora {
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
             valido = false;
@@ -149,7 +151,7 @@ public class Calculadora {
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
             resultado = Operaciones.multiplicar(num1, num2);
@@ -164,11 +166,11 @@ public class Calculadora {
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }}
         }
 // si elije la 4 para dividir incluyendo que no puede dividir por 0
-        else if(respuesta == 4){ // Restar
+        else if(respuesta == 4){ // Sumar
             Functions.limpiar();
             long num1= 0, num2 = 0, resultado = 0;
             
@@ -181,7 +183,7 @@ public class Calculadora {
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
             valido = false;
@@ -190,15 +192,21 @@ public class Calculadora {
             System.out.println("Introduce un numero: ");
             num2 = sc.nextLong();
             while(num2==0){
+                try{
                 Functions.limpiar();
                 System.out.println("No puedes dividir por 0...");
                 System.out.println("Introduce un numero: ");
                 num2 = sc.nextLong();
+                } catch(InputMismatchException e){
+                    Functions.limpiar();
+                    sc.next();
+                    Functions.errorTipoRespuesta();
+                }
             }
             } catch (InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
             valido = true;
         }
@@ -214,13 +222,28 @@ public class Calculadora {
             } catch(InputMismatchException e){
                 Functions.limpiar();
                 sc.next();
-                System.out.println("Solo numeros menores a 11 digitos");
+                Functions.errorTipoRespuesta();
             }
         }
         }
 // Terminar el programa
-        else{System.exit(0);} // termina el programa por si acaso pone algo q no sea un numero (Aun no controlo los try except :D)
+        else{
+            try{
+                while (respuesta > 5 || respuesta <= 0){
+                    Functions.limpiar();
+                    Functions.errorRango();
+                    Functions.mensajeD();
+                    respuesta = sc.nextInt();
+                }
+            } catch(InputMismatchException e){
+                Functions.limpiar();
+                sc.next();
+                Functions.errorTipoRespuesta();
+            }
         }
+        }
+        Functions.limpiar();
+        System.out.println("Chaooooo");
         sc.close(); // Cierre del escaner
     }
 }

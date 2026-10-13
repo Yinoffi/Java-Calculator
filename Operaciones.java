@@ -1,16 +1,16 @@
 import java.math.BigInteger;
 
 public class Operaciones{
-        public static BigInteger restar(BigInteger a, BigInteger b){
-            BigInteger resultado = a.add(b);
+        public static Long restar(Long a, Long b){
+            Long resultado = a-b;
             return resultado;
         }
-        public static BigInteger dividir(BigInteger a, BigInteger b){
-            BigInteger resultado = a.divide(b);
+        public static Long dividir(Long a, Long b){
+            Long resultado = a/b;
             return resultado;
         }
-        public static BigInteger multiplicar(BigInteger a, BigInteger b){
-            BigInteger resultado = a.multiply(b);
+        public static Long multiplicar(Long a, Long b){
+            Long resultado = a*b;
             return resultado;
         }
     public static void main(String[] args) {}

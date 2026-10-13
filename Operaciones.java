@@ -1,14 +1,14 @@
 public class Operaciones{
-        public static double restar(double a, double b){
-            double resultado = a-b;
+        public static Long restar(Long a, Long b){
+            Long resultado = a-b;
             return resultado;
         }
-        public static double dividir(double a, double b){
-            double resultado = a/b;
+        public static Long dividir(Long a, Long b){
+            Long resultado = a/b;
             return resultado;
         }
-        public static double multiplicar(double a, double b){
-            double resultado = a*b;
+        public static Long multiplicar(Long a, Long b){
+            Long resultado = a*b;
             return resultado;
         }
     public static void main(String[] args) {}

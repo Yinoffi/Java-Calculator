@@ -1,6 +1,6 @@
 public class Functions {
     public static void mensajeD(){
-        System.out.println("¿Que quieres hacer?\n1: Sumar\n2: Restar\n3: Multiplicar\n4: Dividir\n5: Salir\n");
+        System.out.println("Hola!, bienvenido a mi calculadora imposible de romper, dime, ¿Que quieres hacer?\n1: Sumar\n2: Restar\n3: Multiplicar\n4: Dividir\n5: Salir\n");
     }
     public static void errorRango(){
         System.out.println("Solo puedes escribir numeros del 1 al 5 y nada mas!!!\n");

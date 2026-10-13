@@ -55,7 +55,8 @@ public class Calculadora {
             try{
             System.out.println("Intruduce un numero: ");
             resp = sc.nextLong();
-            sumas+=resp;
+            sumas = Math.addExact(sumas, resp);
+            //sumas += resp;
             valido = true;
             Functions.limpiar();
             System.out.println("Suma total: "+sumas+"\n");
@@ -64,11 +65,14 @@ public class Calculadora {
                 sc.next();
                 Functions.errorTipoRespuesta();
                 System.out.println("Suma total: "+sumas+"\n");
-            }}
+            } catch(ArithmeticException e){
+                System.out.println("No puedes sumar numeros tan altos!!!\n");
+            }
+        }
                 
             } // Cierre FOR
             Functions.limpiar();
-            System.out.println("Tu suma total es: "+sumas+"\n");
+            System.out.println("Resultado de tu operacion: "+sumas+"\n");
             valido = false;
             while(!valido){
             try {
@@ -194,7 +198,7 @@ public class Calculadora {
             while(num2==0){
                 try{
                 Functions.limpiar();
-                System.out.println("No puedes dividir por 0...");
+                System.out.println("No puedes dividir por 0...\n");
                 System.out.println("Introduce un numero: ");
                 num2 = sc.nextLong();
                 } catch(InputMismatchException e){

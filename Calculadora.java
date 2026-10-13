@@ -87,7 +87,7 @@ public class Calculadora {
             }}
         } // CIERRE IF
 // Si elije la 2 para restar
-        else if(respuesta.equals(BigInteger.valueOf(2))){ // Restar
+        else if(respuesta == 2){ // Restar
             Functions.limpiar();
             long num1= 0, num2 = 0, resultado = 0;
             
